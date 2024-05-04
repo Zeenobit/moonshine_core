@@ -1,0 +1,18 @@
+[package]
+name = "moonshine-util"
+version = "0.2.3"
+edition = "2021"
+license = "MIT"
+description = "Collection of utilities for Bevy"
+categories = ["game-development"]
+keywords = ["bevy", "utility"]
+readme = "README.md"
+homepage = "https://github.com/Zeenobit/moonshine_util"
+repository = "https://github.com/Zeenobit/moonshine_util"
+
+[dependencies]
+bevy_ecs = "0.13.*"
+bevy_hierarchy = "0.13.*"
+
+[dev-dependencies]
+bevy = "0.13.*"

@@ -1,0 +1,21 @@
+[package]
+name = "moonshine-spawn"
+version = "0.2.1"
+edition = "2021"
+license = "MIT"
+description = "Collection of tools for spawning entities in Bevy"
+categories = ["game-development"]
+keywords = ["bevy", "spawn", "prefab"]
+readme = "README.md"
+homepage = "https://github.com/Zeenobit/moonshine_spawn"
+repository = "https://github.com/Zeenobit/moonshine_spawn"
+
+[dependencies]
+bevy_app = "0.13.*"
+bevy_ecs = "0.13.*"
+bevy_reflect = "0.13.*"
+bevy_utils = "0.13.*"
+bevy_hierarchy = "0.13.*"
+
+[dev-dependencies]
+bevy = "0.13.*"
