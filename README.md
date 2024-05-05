@@ -1,10 +1,8 @@
 # 🍸 Moonshine Core
 
-Unconventional framework for making games in [Bevy](https://bevyengine.org/).
+Unconventional cocktail of libraries to make ECS-driven development easier and safer in [Bevy](https://bevyengine.org/).
 
-This crate is a grouping of several related low-level crates within the Moonshine ecosystem:
-
-See individual crates for documentation and examples.
+See individual crates for detailed documentation and examples.
 
 ### 🍎 Moonshine Kind
 
