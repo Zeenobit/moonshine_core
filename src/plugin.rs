@@ -1,5 +1,6 @@
 use bevy_app::{PluginGroup, PluginGroupBuilder};
 
+/// A [`PluginGroup`] which adds all the core plugins.
 pub struct MoonshineCorePlugins;
 
 impl PluginGroup for MoonshineCorePlugins {
