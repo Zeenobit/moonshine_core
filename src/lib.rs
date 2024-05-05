@@ -1,5 +1,13 @@
 #![doc = include_str!("../README.md")]
 
+pub mod kind {
+    pub use moonshine_kind::*;
+}
+
+pub mod object {
+    pub use moonshine_object::*;
+}
+
 pub mod save {
     pub use moonshine_save::save::*;
 
@@ -12,16 +20,19 @@ pub mod load {
     pub use moonshine_save::load::*;
 }
 
-pub extern crate moonshine_kind as kind;
-pub extern crate moonshine_object as object;
-pub extern crate moonshine_spawn as spawn;
-pub extern crate moonshine_util as util;
+pub mod spawn {
+    pub use moonshine_spawn::*;
+}
+
+pub mod util {
+    pub use moonshine_util::*;
+}
 
 pub mod prelude {
-    pub use moonshine_kind::prelude::*;
-    pub use moonshine_object::prelude::*;
-    pub use moonshine_save::prelude::*;
-    pub use moonshine_spawn::prelude::*;
+    pub use crate::kind::prelude::*;
+    pub use crate::object::prelude::*;
+    pub use crate::save::prelude::*;
+    pub use crate::spawn::prelude::*;
 
     pub use crate::MoonshineCorePlugins;
 }
