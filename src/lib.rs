@@ -33,6 +33,7 @@ pub mod prelude {
     pub use crate::object::prelude::*;
     pub use crate::save::prelude::*;
     pub use crate::spawn::prelude::*;
+    pub use crate::util::{expect::Expect, system::*};
 
     pub use crate::MoonshineCorePlugins;
 }
