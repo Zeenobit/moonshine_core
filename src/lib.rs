@@ -20,6 +20,10 @@ pub mod load {
     pub use moonshine_save::load::*;
 }
 
+pub mod check {
+    pub use moonshine_check::*;
+}
+
 pub mod spawn {
     pub use moonshine_spawn::*;
 }
@@ -29,6 +33,7 @@ pub mod util {
 }
 
 pub mod prelude {
+    pub use crate::check::prelude::*;
     pub use crate::kind::prelude::*;
     pub use crate::object::prelude::*;
     pub use crate::save::prelude::*;
