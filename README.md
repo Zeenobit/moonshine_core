@@ -90,33 +90,6 @@ fn should_load(key: Res<ButtonInput<KeyCode>>) -> bool {
 }
 ```
 
-### 🥚 Moonshine Spawn
-
-[![crates.io](https://img.shields.io/crates/v/moonshine-spawn)](https://crates.io/crates/moonshine-spawn)
-[![downloads](https://img.shields.io/crates/dr/moonshine-spawn?label=downloads)](https://crates.io/crates/moonshine-spawn)
-[![docs.rs](https://docs.rs/moonshine-spawn/badge.svg)](https://docs.rs/moonshine-spawn)
-[![license](https://img.shields.io/crates/l/moonshine-spawn)](https://github.com/Zeenobit/moonshine_spawn/blob/main/LICENSE)
-[![stars](https://img.shields.io/github/stars/Zeenobit/moonshine_spawn)](https://github.com/Zeenobit/moonshine_spawn)
-
-Tools for spawning entity hierarchies witout systems:
-
-```rust
-use bevy::prelude::*;
-use moonshine_spawn::prelude::*;
-
-fn chicken() -> impl Bundle {
-    Chicken.with_children(|chicken| {
-        chicken.spawn(ChickenHead);
-    })
-}
-
-#[derive(Component)]
-struct Chicken;
-
-#[derive(Component)]
-struct ChickenHead;
-```
-
 ### 🛠️ Moonshine Utilities
 
 Collection of generic utilities for improved safety, diagnostics, and ergonomics.
