@@ -7,9 +7,6 @@
 [submodule "crates/save"]
 	path = crates/save
 	url = https://github.com/Zeenobit/moonshine_save
-[submodule "crates/spawn"]
-	path = crates/spawn
-	url = https://github.com/Zeenobit/moonshine_spawn
 [submodule "crates/util"]
 	path = crates/util
 	url = https://github.com/Zeenobit/moonshine_util
