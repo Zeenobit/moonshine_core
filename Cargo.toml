@@ -1,6 +1,6 @@
 [package]
 name = "moonshine-core"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 license = "MIT"
 description = "Unconventional framework for making games in Bevy"
@@ -16,7 +16,7 @@ moonshine-kind = { version = "0.2.1", path = "crates/kind" }
 moonshine-object = { version = "0.2.1", path = "crates/object" }
 moonshine-save = { version = "0.3.10", path = "crates/save" }
 moonshine-check = { version = "0.1.1", path = "crates/check" }
-moonshine-spawn = { version = "0.2.3", path = "crates/spawn" }
+moonshine-spawn = { version = "0.2.4", path = "crates/spawn" }
 moonshine-util = { version = "0.2.6", path = "crates/util" }
 
 [dev-dependencies]
