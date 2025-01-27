@@ -28,11 +28,16 @@ pub mod util {
     pub use moonshine_util::*;
 }
 
+pub mod tag {
+    pub use moonshine_tag::*;
+}
+
 pub mod prelude {
     pub use crate::check::prelude::*;
     pub use crate::kind::prelude::*;
     pub use crate::object::prelude::*;
     pub use crate::save::prelude::*;
+    pub use crate::tag::prelude::*;
     pub use crate::util::prelude::*;
 
     pub use crate::MoonshineCorePlugins;

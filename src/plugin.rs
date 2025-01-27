@@ -8,5 +8,6 @@ impl PluginGroup for MoonshineCorePlugins {
         PluginGroupBuilder::start::<Self>()
             .add(crate::save::SavePlugin)
             .add(crate::load::LoadPlugin)
+            .add(crate::tag::TagPlugin)
     }
 }
