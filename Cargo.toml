@@ -11,7 +11,7 @@ homepage = "https://github.com/Zeenobit/moonshine_core"
 repository = "https://github.com/Zeenobit/moonshine_core"
 
 [dependencies]
-bevy_app = "0.15.*"
+bevy_app = "0.16.*"
 moonshine-kind = { version = "0.2.1", path = "crates/kind" }
 moonshine-object = { version = "0.2.1", path = "crates/object" }
 moonshine-save = { version = "0.3.10", path = "crates/save" }
@@ -20,4 +20,4 @@ moonshine-util = { version = "0.2.6", path = "crates/util" }
 moonshine-tag = { version = "0.2.0", path = "crates/tag" }
 
 [dev-dependencies]
-bevy = "0.15.*"
+bevy = "0.16.*"
