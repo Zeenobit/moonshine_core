@@ -76,8 +76,8 @@ fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         .add_plugins((SavePlugin, LoadPlugin))
-        .add_systems(PreUpdate, save_default().into_file("world.ron").run_if(should_save))
-        .add_systems(PreUpdate, load_from_file("world.ron").run_if(should_load))
+        .add_systems(PreUpdate, save_default().into(static_file("world.ron")).run_if(should_save))
+        .add_systems(PreUpdate, load(static_file("world.ron")).run_if(should_load))
         .run();
 }
 
