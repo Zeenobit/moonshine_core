@@ -90,6 +90,38 @@ fn should_load(key: Res<ButtonInput<KeyCode>>) -> bool {
 }
 ```
 
+### 🏷️ Moonshine Tag
+
+Cheap, fast, mostly unique identifiers designed for Bevy:
+
+```rust
+use bevy::prelude::*;
+use moonshine_tag::{prelude::*, filter, Filter};
+
+tags! { APPLE, ORANGE, JUICY, CRUNCHY, POISONED }
+
+let mut world = World::new();
+
+// Define some fruits!
+let fruits = [
+    Tags::from([APPLE, CRUNCHY]),
+    Tags::from([ORANGE, JUICY]),
+    Tags::from([APPLE, CRUNCHY, POISONED])
+];
+
+// Only crunchy, edible apples, please! :)
+let filter: Filter = filter!([APPLE, CRUNCHY]) & filter!(![POISONED]);
+
+for fruit in &fruits {
+    if filter.allows(fruit) {
+        world.spawn(fruit.clone());
+    }
+}
+
+# assert!(filter.allows(&fruits[0]));
+```
+
+
 ### 🛠️ Moonshine Utilities
 
 Collection of generic utilities for improved safety, diagnostics, and ergonomics.
