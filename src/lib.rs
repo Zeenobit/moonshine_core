@@ -20,12 +20,6 @@ pub mod load {
     pub use moonshine_save::load::*;
 }
 
-#[deprecated(since = "0.2.2", note = "Use component hooks instead.")]
-pub mod check {
-    #[allow(deprecated)]
-    pub use moonshine_check::*;
-}
-
 pub mod util {
     pub use moonshine_util::*;
 }
@@ -42,9 +36,6 @@ pub mod prelude {
     pub use crate::util::prelude::*;
 
     pub use crate::MoonshineCorePlugins;
-
-    #[allow(deprecated)] // TODO: Remove
-    pub use crate::check::prelude::*;
 }
 
 mod plugin;

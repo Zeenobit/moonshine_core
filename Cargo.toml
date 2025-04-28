@@ -15,7 +15,6 @@ bevy_app = "0.16.*"
 moonshine-kind = { version = "0.2.*", path = "crates/kind" }
 moonshine-object = { version = "0.2.*", path = "crates/object" }
 moonshine-save = { version = "0.4.*", path = "crates/save" }
-moonshine-check = { version = "0.1.*", path = "crates/check" }
 moonshine-util = { version = "0.3.*", path = "crates/util" }
 moonshine-tag = { version = "0.2.*", path = "crates/tag" }
 
