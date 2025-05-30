@@ -1,6 +1,6 @@
 [package]
 name = "moonshine-core"
-version = "0.3.1"
+version = "0.3.2"
 edition = "2021"
 license = "MIT"
 description = "Unconventional framework for making games in Bevy"
@@ -12,11 +12,11 @@ repository = "https://github.com/Zeenobit/moonshine_core"
 
 [dependencies]
 bevy_app = "0.16.*"
-moonshine-kind = { version = "0.2.*", path = "crates/kind" }
-moonshine-object = { version = "0.2.*", path = "crates/object" }
-moonshine-save = { version = "0.4.*", path = "crates/save" }
-moonshine-util = { version = "0.3.*", path = "crates/util" }
-moonshine-tag = { version = "0.2.*", path = "crates/tag" }
+moonshine-kind = { version = "0.2.*" }
+moonshine-object = { version = "0.2.*" }
+moonshine-save = { version = "0.4.*" }
+moonshine-util = { version = "0.3.*" }
+moonshine-tag = { version = "0.2.*" }
 
 [dev-dependencies]
 bevy = "0.16.*"
