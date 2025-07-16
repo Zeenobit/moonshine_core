@@ -72,21 +72,40 @@ Save/Load framework for managing persistent game state:
 use bevy::prelude::*;
 use moonshine_core::prelude::*;
 
+#[derive(Component, Reflect)]
+#[reflect(Component)]
+#[require(Save)]
+struct Player { /* ... */ }
+
 fn main() {
-    App::new()
-        .add_plugins(DefaultPlugins)
-        .add_plugins((SavePlugin, LoadPlugin))
-        .add_systems(PreUpdate, save_default().into(static_file("world.ron")).run_if(should_save))
-        .add_systems(PreUpdate, load(static_file("world.ron")).run_if(should_load))
-        .run();
+    let mut app = App::new();
+    app.add_plugins(DefaultPlugins)
+        .register_type::<Player>()
+        .add_observer(save_on_default_event)
+        .add_observer(load_on_default_event)
+        .add_systems(Startup, spawn_player)
+        .add_systems(
+            Update,
+            (trigger_save, trigger_load)
+        );
+
+    // app.run();
 }
 
-fn should_save(key: Res<ButtonInput<KeyCode>>) -> bool {
-    key.just_pressed(KeyCode::KeyS)
+fn spawn_player(mut commands: Commands) {
+    commands.spawn(Player { /* ... */ });
 }
 
-fn should_load(key: Res<ButtonInput<KeyCode>>) -> bool {
-    key.just_pressed(KeyCode::KeyL)
+fn trigger_save(key: Res<ButtonInput<KeyCode>>, mut commands: Commands) {
+    if key.just_pressed(KeyCode::KeyS) {
+        commands.trigger_save(SaveWorld::default_into_file("world.ron"));
+    }
+}
+
+fn trigger_load(key: Res<ButtonInput<KeyCode>>, mut commands: Commands) {
+    if key.just_pressed(KeyCode::KeyL) {
+        commands.trigger_load(LoadWorld::default_from_file("world.ron"));
+    }
 }
 ```
 
@@ -102,7 +121,7 @@ Cheap, fast, mostly unique identifiers designed for Bevy:
 
 ```rust
 use bevy::prelude::*;
-use moonshine_tag::{prelude::*, filter, Filter};
+use moonshine_tag::prelude::*;
 
 tags! { APPLE, ORANGE, JUICY, CRUNCHY, POISONED }
 
@@ -116,7 +135,7 @@ let fruits = [
 ];
 
 // Only crunchy, edible apples, please! :)
-let filter: Filter = filter!([APPLE, CRUNCHY]) & filter!(![POISONED]);
+let filter: TagFilter = tag_filter!([APPLE, CRUNCHY] & ![POISONED]);
 
 for fruit in &fruits {
     if filter.allows(fruit) {
@@ -124,7 +143,9 @@ for fruit in &fruits {
     }
 }
 
-# assert!(filter.allows(&fruits[0]));
+# assert!(fruits[0].matches(&filter));
+# assert!(!fruits[1].matches(&filter));
+# assert!(!fruits[2].matches(&filter));
 ```
 
 
@@ -137,6 +158,29 @@ Collection of generic utilities for improved safety, diagnostics, and ergonomics
 [![docs.rs](https://docs.rs/moonshine-util/badge.svg)](https://docs.rs/moonshine-util)
 [![license](https://img.shields.io/crates/l/moonshine-util)](https://github.com/Zeenobit/moonshine_util/blob/main/LICENSE)
 [![stars](https://img.shields.io/github/stars/Zeenobit/moonshine_util)](https://github.com/Zeenobit/moonshine_util)
+
+
+## Changes
+
+### Version 0.4
+
+- 🍎 [**Kind**](https://github.com/Zeenobit/moonshine_kind)
+    - Deprecated `kind!` macro in favor of manual implementation of `CastInto`.
+    - Added `Instance<T>::as_trigger_target()`
+
+- 💾 [**Save**](https://github.com/Zeenobit/moonshine_save)
+    - New event-driven interface for saving and loading
+    - Old interface is deprecated, but still available as a wrapper around the new system
+    - See crate documentation for migration guide
+
+- 🏷️ [**Tag**](https://github.com/Zeenobit/moonshine_tag)
+    - Renamed `Filter` back to `TagFilter`
+    - Flipped the `allows` functions into `matches` functions
+    - Added methods for human-friendly tag identification:
+    - Support for mixed expressions in `tag_filter!`
+- 🛠️ [**Utilities**](https://github.com/Zeenobit/moonshine_util)
+    - Add `SingleEvent` feature
+
 
 ## Support
 
