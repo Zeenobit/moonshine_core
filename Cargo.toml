@@ -16,7 +16,7 @@ moonshine-kind = { version = "0.3.*" }
 moonshine-object = { version = "0.2.*" }
 moonshine-save = { version = "0.5.*" }
 moonshine-util = { version = "0.3.*" }
-moonshine-tag = { version = "0.3.*" }
+moonshine-tag = { version = "0.3.*", features = ["pretty-serde"] }
 
 [dev-dependencies]
 bevy = "0.16.*"
