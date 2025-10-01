@@ -10,9 +10,6 @@
 [submodule "crates/util"]
 	path = crates/util
 	url = https://github.com/Zeenobit/moonshine_util
-[submodule "crates/check"]
-	path = crates/check
-	url = https://github.com/Zeenobit/moonshine_check
 [submodule "crates/tag"]
 	path = crates/tag
 	url = https://github.com/Zeenobit/moonshine_tag
