@@ -159,29 +159,6 @@ Collection of generic utilities for improved safety, diagnostics, and ergonomics
 [![license](https://img.shields.io/crates/l/moonshine-util)](https://github.com/Zeenobit/moonshine_util/blob/main/LICENSE)
 [![stars](https://img.shields.io/github/stars/Zeenobit/moonshine_util)](https://github.com/Zeenobit/moonshine_util)
 
-
-## Changes
-
-### Version 0.4
-
-- 🍎 [**Kind**](https://github.com/Zeenobit/moonshine_kind)
-    - Deprecated `kind!` macro in favor of manual implementation of `CastInto`.
-    - Added `Instance<T>::as_trigger_target()`
-
-- 💾 [**Save**](https://github.com/Zeenobit/moonshine_save)
-    - New event-driven interface for saving and loading
-    - Old interface is deprecated, but still available as a wrapper around the new system
-    - See crate documentation for migration guide
-
-- 🏷️ [**Tag**](https://github.com/Zeenobit/moonshine_tag)
-    - Renamed `Filter` back to `TagFilter`
-    - Flipped the `allows` functions into `matches` functions
-    - Added methods for human-friendly tag identification:
-    - Support for mixed expressions in `tag_filter!`
-- 🛠️ [**Utilities**](https://github.com/Zeenobit/moonshine_util)
-    - Add `SingleEvent` feature
-
-
 ## Support
 
 Please [post an issue](https://github.com/Zeenobit/moonshine_core/issues/new) for any bugs, questions, or suggestions.

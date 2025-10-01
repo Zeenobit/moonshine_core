@@ -11,12 +11,12 @@ homepage = "https://github.com/Zeenobit/moonshine_core"
 repository = "https://github.com/Zeenobit/moonshine_core"
 
 [dependencies]
-bevy_app = "0.16.*"
-moonshine-kind = { version = "0.3.*" }
-moonshine-object = { version = "0.2.*" }
-moonshine-save = { version = "0.5.*" }
-moonshine-util = { version = "0.3.*" }
-moonshine-tag = { version = "0.3.*", features = ["pretty-serde"] }
+bevy_app = "0.17"
+moonshine-kind = "0.4"
+moonshine-object = "0.3"
+moonshine-save = "0.6"
+moonshine-util = "0.4"
+moonshine-tag = { version = "0.4", features = ["pretty-serde"] }
 
 [dev-dependencies]
-bevy = "0.16.*"
+bevy = "0.17"
