@@ -143,9 +143,9 @@ for fruit in &fruits {
     }
 }
 
-# assert!(fruits[0].matches(&filter));
-# assert!(!fruits[1].matches(&filter));
-# assert!(!fruits[2].matches(&filter));
+assert!(fruits[0].matches(&filter));
+assert!(!fruits[1].matches(&filter));
+assert!(!fruits[2].matches(&filter));
 ```
 
 
