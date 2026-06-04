@@ -35,7 +35,7 @@ struct FruitBasket {
 [![license](https://img.shields.io/crates/l/moonshine-object)](https://github.com/Zeenobit/moonshine_object/blob/main/LICENSE)
 [![stars](https://img.shields.io/github/stars/Zeenobit/moonshine_object)](https://github.com/Zeenobit/moonshine_object)
 
-Ergonomic wrapper for managing complex enttiy hierarchies:
+Ergonomic wrapper for managing complex entity hierarchies:
 
 ```rust
 use bevy::prelude::*;
